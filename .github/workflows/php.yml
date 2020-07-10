@@ -1,4 +1,4 @@
-name: PHP Composer for Skeleton
+name: build
 
 on:
   push:
