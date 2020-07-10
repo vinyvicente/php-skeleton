@@ -31,5 +31,5 @@ jobs:
       run: composer install --prefer-dist --no-progress --no-suggest
 
     - name: Running Tests
-        run: php ./vendor/bin/pest
+        run: composer test
 
