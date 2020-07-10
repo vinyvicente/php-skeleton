@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  php:
+    build:
+      context: .
+      target: dev
+      args:
+        - XDEBUG_REMOTE_HOST=${XDEBUG_REMOTE_HOST:-localhost}
+    image: app_php
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/var/www/app
+    command: php -S 0.0.0.0:8000 -t public/
+    environment:
+      - PHP_IDE_CONFIG=serverName=${XDEBUG_IDE_SERVERNAME:-php}
