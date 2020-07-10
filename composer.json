@@ -1,0 +1,48 @@
+{
+    "name": "vinyvicente/skeleton-php",
+    "description": "Skeleton Template to PHP projects",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vinicius Vicente",
+            "email": "vinyvicente@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "ergebnis/phpstan-rules": "^0.15.0",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "pestphp/pest": "^0.2.3",
+        "phpstan/phpstan": "^0.12.32",
+        "phpstan/phpstan-strict-rules": "^0.12.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist"
+    },
+    "scripts": {
+        "test:lint": "php-cs-fixer fix -v --dry-run",
+        "test:types": "phpstan analyse --ansi --memory-limit=0",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    }
+}

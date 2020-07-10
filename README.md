@@ -1,1 +1,2 @@
-# php-skeleton
+# Skeleton Template for PHP projects
+
